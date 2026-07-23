@@ -1,54 +1,49 @@
 package main
-import "fmt"
-func pani(a *int){
-if *a=nil{
-fmt.Println("The pointer must be empty")
-}else{
-fmt.Println(a)
-}
-}
-func Namaskar(*name *string){
-*name="HEllo User" + *name
-}
-func tooglebool(a *bool){
-*a=!*a
 
+import "fmt"
+
+
+func cs(b suhag,newval string){
+b.name=newval
 }
-func reset_to_zero(a *int){
-*a=0
+type suhag struct {
+	name string
+	age  int
 }
-func swap(a, b *int) {
-temp:=*a
-*a = *b
-*b = temp
+
+func change_value(n *suhag, newval string) {
+	n.name = newval 
 }
+func pbv ( b suhag , newval string)  suhag{
+b.name=newval
+return  b
+}
+
+
 
 func main() {
-x :=10
-y :=11
-fmt.Println("x =",x)
-fmt.Println("y =",y)
-swap(&x,&y)
-fmt.Println("After swap",swap)
-fmt.Println("x =",x)
-fmt.Println("y =",y)
-z:=10
-fmt.Println("z =",z)
-reset_to_zero(&z)
-fmt.Println("z =",z)
-d:=true
-fmt.Println("Boolean =" ,d)
-tooglebool(&d)
-fmt.Print("Boolen =",d)
-name :="suhag"
-Namaskar(&name)
-fmt.Println(name)
-g:=0
-pani(&g)
-p=4
-pani(&p)
-fmt.Println(g)
-fmt.Println(p)
+	s1 := suhag{
+		name: "Adhikari",
+		age:  19,
+	}
+
+	var s2 suhag
+	s2.name = "Nirajan"
+	s2.age = 20
+
+	fmt.Println(s1.name)
+	fmt.Println(s1.age)
+	fmt.Println(s2.name)
+	fmt.Println(s2.age)
+
+	fmt.Println("\nValue after Change:")
+	change_value(&s1,"suhag")
+
+	fmt.Println(s1.name)
+cs(s2,"mahim")
+fmt.Println(s2.name)
+fmt.Println(s2.name)
+ayush :=pbv(s2 , "Rohan")
+fmt.Println(ayush.name)
+
 }
-
-
